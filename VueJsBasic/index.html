@@ -5,12 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Js Basic</title>
     <!-- Vue Js CDN script -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
+
+    <div id="app">
+        <h1>{{message}}</h1>
+    </div>
     
     <script>
         const {createApp} = Vue
+
+        createApp({
+            data(){
+                return{
+                    message : 'Hello World!'
+                }
+            }
+        }).mount('#app')
     </script>
 
 </body>
