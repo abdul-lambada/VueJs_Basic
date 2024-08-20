@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Js Basic</title>
 </head>
+
 <body>
 
     <div id="app">
-    {{message}}
+        <button @click="count--">-</button>
+        {{count}}
+        <button @click="count++">+</button>
     </div>
-    
+
     <!--  script Vue Js dengan Using The ES Module Build -->
     <script type="module">
-        import {createApp} from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 
         createApp({
-            data(){
-                return{
-                    message : 'Hello World!'
+            data() {
+                return {
+                    // menambahkan reactivity di vue js ES Module
+                    count: 0
+                }
+            },
+            // menambahkan reactivity methods
+            methods: {
+                tambah(){
+                    this.count++
+                },
+                kurang(){
+                    this.count--
                 }
             }
         }).mount('#app')
     </script>
 
 </body>
+
 </html>
